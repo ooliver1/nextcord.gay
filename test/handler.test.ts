@@ -15,7 +15,7 @@ describe("handle", () => {
         method: "GET",
         headers: {
           "user-agent":
-            "Mozilla/5.0 (compatible; Discorot/2.0; +https://discordapp.com)",
+            "Mozilla/5.0 (compatible; DiscordBot/2.0; +https://discordapp.com)",
         },
       })
     );
@@ -30,7 +30,7 @@ describe("handle", () => {
         method: "GET",
         headers: {
           "user-agent":
-            "Mozilla/5.0 Googlebot (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 " +
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 " +
             "(KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36 OPR/83.0.4254.70",
         },
       })
@@ -49,6 +49,6 @@ describe("handle", () => {
     );
     expect(result.status).toEqual(200);
     const text = await result.text();
-    expect(text).toEqual("No user-agent , impressive!");
+    expect(text).toEqual("No user-agent, impressive!");
   });
 });
