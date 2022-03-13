@@ -38,10 +38,10 @@ Optimised in both speed and memory.">
 `;
 
 export async function handleRequest(request: Request): Promise<Response> {
-  const user_agent = request.headers.get("user-agent");
+  const userAgent = request.headers.get("user-agent");
 
-  if (user_agent) {
-    if (isbot(user_agent)) {
+  if (userAgent) {
+    if (isbot(userAgent)) {
       return new Response(html, {
         headers: {
           "content-type": "text/html;charset=utf-8",
