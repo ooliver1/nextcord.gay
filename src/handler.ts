@@ -38,5 +38,26 @@ Optimised in both speed and memory.">
 `;
 
 export async function handleRequest(request: Request): Promise<Response> {
-  return new Response("h", {status: 404})
+  const user_agent = request.headers.get("user-agent");
+
+  if (user_agent) {
+    if (isbot(user_agent)) {
+      return new Response(html, {
+        headers: {
+          "content-type": "text/html;charset=utf-8",
+          "Cache-Control": "no-cache",
+        },
+      });
+    }
+
+    return new Response(null, {
+      status: 301,
+      headers: {
+        "Cache-Control": "no-cache",
+        Location: "https://youtube.com/watch?v=dQw4w9WgXcQ",
+      },
+    });
+  }
+
+  return new Response("No user-agent, impressive!");
 }
