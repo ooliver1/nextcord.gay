@@ -1,3 +1,3 @@
-# wrangler-typescript
+# nextcord.gay
 
-My personal template for workers
+A cloudflare worker to use the user-agent for ~~rickrolling~~ without a discord embed
