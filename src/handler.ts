@@ -23,7 +23,7 @@ Optimised in both speed and memory.">
     content="https://raw.githubusercontent.com/nextcord/nextcord/master/assets/logo.png">
 
 <!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:card" content="summary">
 <meta property="twitter:url" content="https://nextcord.gay">
 <meta property="twitter:title" content="Nextcord - A Feature Rich Discord API Wrapper In Python">
 <meta property="twitter:description" content="A modern, easy-to-use, feature-rich, and async-ready API wrapper for Discord written in Python.
