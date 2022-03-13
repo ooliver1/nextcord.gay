@@ -13,7 +13,8 @@
     "types": [
       "@cloudflare/workers-types",
       "@types/jest",
-      "@types/service-worker-mock"
+      "@types/service-worker-mock",
+      "@types/node"
     ]
   },
   "include": ["src"],
