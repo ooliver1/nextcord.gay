@@ -8,5 +8,12 @@ compatibility_date = "2022-03-13"
 
 [build]
 command = "npm install && npm run build"
+
 [build.upload]
-format = "service-worker"
+format = "modules"
+dir = "dist"
+main = "./index.mjs"
+
+[[build.upload.rules]]
+type = "ESModule"
+globs = ["**/*.mjs"]
