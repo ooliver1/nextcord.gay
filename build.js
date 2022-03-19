@@ -1,12 +1,12 @@
 import path from "path";
 import { fileURLToPath } from "url";
-import { build } from "esbuild";
+import { buildSync } from "esbuild";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 try {
-  await build({
+  buildSync({
     bundle: true,
     sourcemap: true,
     format: "esm",
