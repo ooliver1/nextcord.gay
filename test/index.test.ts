@@ -1,8 +1,5 @@
 import { handleRequest } from "../src/index";
-import dotenv from "dotenv";
 import domains from "../src/domains";
-
-dotenv.config();
 
 const userUserAgent =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) " +
