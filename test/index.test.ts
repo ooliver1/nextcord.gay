@@ -1,18 +1,9 @@
 import { handleRequest } from "../src/index";
-import makeServiceWorkerEnv from "service-worker-mock";
-import nodeFetch from "node-fetch";
 import dotenv from "dotenv";
 import domains from "../src/domains";
 
-if (typeof fetch === "undefined") {
-  global.fetch = nodeFetch;
-}
-
 dotenv.config();
-// @ts-ignore
-const env: Env = process.env;
 
-declare var global: any;
 const userUserAgent =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) " +
   "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 " +
@@ -30,14 +21,10 @@ describe("check", () => {
 });
 
 describe("handle", () => {
-  beforeEach(() => {
-    Object.assign(global, makeServiceWorkerEnv());
-    jest.resetModules();
-  });
-
   test("handle bot", async () => {
+    const env = getMiniflareBindings();
     const result = await handleRequest(
-      new Request("/", { headers: { "user-agent": botUserAgent } }),
+      new Request("http://localhost", { headers: { "user-agent": botUserAgent } }),
       env
     );
     expect(result.status).toEqual(200);
@@ -46,8 +33,11 @@ describe("handle", () => {
   });
 
   test("handle user", async () => {
+    const env = getMiniflareBindings();
     const result = await handleRequest(
-      new Request("/", { headers: { "user-agent": userUserAgent, test: "yes" } }),
+      new Request("http://localhost", {
+        headers: { "user-agent": userUserAgent, test: "yes" },
+      }),
       env
     );
     expect(result.status).toEqual(301);
@@ -55,7 +45,8 @@ describe("handle", () => {
   });
 
   test("handle no user-agent", async () => {
-    const result = await handleRequest(new Request("/"), env);
+    const env = getMiniflareBindings();
+    const result = await handleRequest(new Request("http://localhost"), env);
     expect(result.status).toEqual(200);
     const text = await result.text();
     expect(text).toEqual("No user-agent, impressive!");

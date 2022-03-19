@@ -21,7 +21,8 @@
   },
   "include": [
     "src",
-    "types"
+    "types",
+    "types/env.d.ts"
   ],
   "exclude": [
     "node_modules",

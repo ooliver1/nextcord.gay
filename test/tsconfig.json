@@ -1,0 +1,16 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "types": [
+      "@cloudflare/workers-types",
+      "jest",
+      "../types/env",
+      "../types/domains"
+    ]
+  },
+  "include": [
+    "../src/**/*",
+    "**/*"
+  ],
+  "exclude": []
+}

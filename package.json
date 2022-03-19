@@ -9,7 +9,7 @@
     "format": "prettier --write  '*.{json,js}' 'src/**/*.{js,ts}' 'test/**/*.{js,ts}'",
     "lint": "eslint --max-warnings=0 src && prettier --check '*.{json,js}' 'src/**/*.{js,ts}' 'test/**/*.{js,ts}'",
     "test": "npm run build && node --experimental-vm-modules node_modules/jest/bin/jest.js --verbose --coverage --config jest.config.js",
-    "dev": "wrangler dev"
+    "dev": "miniflare --live-reload --debug"
   },
   "author": "author",
   "license": "MIT OR Apache-2.0",
@@ -34,6 +34,8 @@
     "eslint-config-prettier": "^8.1.0",
     "eslint-config-typescript": "^3.0.0",
     "jest": "^27.0.1",
+    "jest-environment-miniflare": "^2.3.0",
+    "miniflare": "^2.3.0",
     "node-fetch": "^2.6.7",
     "prettier": "^2.3.0",
     "service-worker-mock": "^2.0.5",
