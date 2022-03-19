@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Create .env
-        run: bash ../env.sh "$secrets"
+        run: bash .github/env.sh "$secrets"
         env:
           secrets: ${{ toJson(secrets) }}
       - uses: actions/checkout@v2
