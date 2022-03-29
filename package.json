@@ -12,7 +12,7 @@
     "dev": "miniflare --live-reload --debug"
   },
   "author": "author",
-  "license": "MIT OR Apache-2.0",
+  "license": "MIT",
   "eslintConfig": {
     "root": true,
     "extends": [

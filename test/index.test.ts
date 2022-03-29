@@ -8,15 +8,6 @@ const userUserAgent =
 const botUserAgent =
   "Mozilla/5.0 (compatible; DiscordBot/2.0; " + "+https://discordapp.com)";
 
-describe("check", () => {
-  test("check domains", () => {
-    for (const [domain, text] of Object.entries(domains)) {
-      expect(typeof domain === "string").toBe(true);
-      expect(typeof text === "string").toBe(true);
-    }
-  });
-});
-
 describe("handle", () => {
   test("handle bot", async () => {
     const env = getMiniflareBindings();
