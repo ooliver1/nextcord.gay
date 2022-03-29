@@ -5,7 +5,7 @@ A cloudflare worker to use the user-agent for ~~rickrolling~~ without a discord 
 ## Build
 
 1. `npm run build`
-2. Find the output in ./dist/worker.mjs (module syntax)
+2. Find the output in `./dist/worker.mjs` (module syntax)
 
 ## Develop
 
