@@ -5,6 +5,7 @@ const domains: Domains = {
   "https://www.youtube.com/watch?v=zKJ6xGVzrnI": "madelined another user, h",
   "https://www.youtube.com/watch?v=47ibFGy-w18": "voicecracked another user, h",
   "https://www.youtube.com/watch?v=jzwMjOl8Iyo": "toothbrushed another user, h",
+  "https://www.youtube.com/watch?v=IO9XlQrEt2Y": "stagerolled another user, h",
 };
 
 export default domains;
