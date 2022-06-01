@@ -11,6 +11,9 @@ const botUserAgent =
 describe("handle", () => {
   test("handle bot", async () => {
     const env = getMiniflareBindings();
+    if (!env.WEBHOOK) {
+      env.WEBHOOK = "https://httpstat.us/204"; // for dependabot and PRs
+    }
     const result = await handleRequest(
       new Request("http://localhost", { headers: { "user-agent": botUserAgent } }),
       env
@@ -22,6 +25,9 @@ describe("handle", () => {
 
   test("handle user", async () => {
     const env = getMiniflareBindings();
+    if (!env.WEBHOOK) {
+      env.WEBHOOK = "https://httpstat.us/204"; // for dependabot and PRs
+    }
     const result = await handleRequest(
       new Request("http://localhost", {
         headers: { "user-agent": userUserAgent, test: "yes" },
@@ -34,6 +40,9 @@ describe("handle", () => {
 
   test("handle no user-agent", async () => {
     const env = getMiniflareBindings();
+    if (!env.WEBHOOK) {
+      env.WEBHOOK = "https://httpstat.us/204"; // for dependabot and PRs
+    }
     const result = await handleRequest(new Request("http://localhost"), env);
     expect(result.status).toEqual(200);
     const text = await result.text();
