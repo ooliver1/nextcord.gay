@@ -1,19 +1,12 @@
 name = "nextcord-gay"
-type = "javascript"
-zone_id = "647c59d2f26a89eb310ad728c5313876"
-account_id = "57b702387c98c74ae1d6147aad215781"
 route = "nextcord.gay/*"
 workers_dev = true
 compatibility_date = "2022-03-13"
+main = "./dist/index.mjs"
 
 [build]
 command = "npm install && npm run build"
 
-[build.upload]
-format = "modules"
-dir = "dist"
-main = "./index.mjs"
-
-[[build.upload.rules]]
+[[rules]]
 type = "ESModule"
 globs = ["**/*.mjs"]
