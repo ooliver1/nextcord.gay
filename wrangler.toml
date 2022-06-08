@@ -1,4 +1,5 @@
 name = "nextcord-gay"
+account_id = "57b702387c98c74ae1d6147aad215781"
 route = "nextcord.gay/*"
 workers_dev = true
 compatibility_date = "2022-03-13"
